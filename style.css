@@ -1,0 +1,71 @@
+:root{
+      --bg:#0f1724;
+      --panel:#0b1220;
+      --accent:#7c5cff;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --button:#111827;
+      --button-hover:#1f2937;
+      --danger:#ef4444;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *
+    {
+      box-sizing:border-box
+    }
+    html,body{
+      height:100%;margin:0
+    }
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,var(--bg) 0%, #071025 100%);
+      color:#e6eef8;padding:24px;
+      -webkit-font-smoothing:antialiased;
+       -moz-osx-font-smoothing:grayscale;
+    }
+    .calculator{
+      width:100%;
+      max-width:420px;
+      background:linear-gradient(180deg,var(--panel), #07121b);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(2,6,23,0.7);
+      display:grid;
+      gap:14px;
+      grid-template-rows:auto 1fr;
+    }
+    .screen{
+      background:var(--glass);
+      padding:14px;
+      border-radius:12px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .top-row{display:flex;justify-content:space-between;align-items:center}
+    .title{font-size:14px;color:var(--muted)}
+    .mode{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+    .display{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+    .sub-display{font-size:14px;color:var(--muted);min-height:20px;word-break:break-all}
+    .main-display{font-size:36px;font-weight:600;min-height:46px;word-break:break-word}
+
+    .keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    button.key{
+      padding:18px;border-radius:10px;border:0;background:var(--button);color:inherit;font-size:18px;cursor:pointer;box-shadow:inset 0 -2px 0 rgba(0,0,0,0.25);
+    }
+    button.key:hover{background:var(--button-hover)}
+    button.key.span-2{grid-column:span 2}
+    button.func{background:transparent;color:var(--muted);font-weight:600}
+    button.op{background:linear-gradient(180deg,var(--accent), #5b3be0);color:white}
+    button.equal{background:linear-gradient(180deg,#06b6d4,#0891b2);color:white;font-weight:700}
+    button.clear{background:linear-gradient(180deg,#ef4444,#dc2626);color:white}
+
+    .footer{font-size:12px;color:var(--muted);text-align:center;padding:6px}
+
+    /* Responsive */
+    @media (max-width:420px){
+      .main-display{font-size:28px}
+      button.key{padding:14px;font-size:16px}
+    }
